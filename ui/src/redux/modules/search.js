@@ -9,14 +9,14 @@ const SET_MODEL_QUERY = 'learninglocker/search/SET_MODEL_QUERY';
 /*
  * Reducers
  */
+const initialState = {};
 const handler = handleActions({
   [SET_MODEL_QUERY]: (state, action) => {
     const { schema, query } = action;
     return state.setIn([schema, 'query'], query);
   }
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

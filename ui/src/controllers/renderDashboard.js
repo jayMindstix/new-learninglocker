@@ -12,15 +12,15 @@ import LLApiClient from 'ui/utils/LLApiClient';
 import createStore from 'ui/redux/create';
 import router from 'lib/routes';
 import Dashboard from 'lib/models/dashboard';
-import clientAssets from '../public/assets.json';
+// import clientAssets from '/../public/assets.json';
 
 const renderHtml = req => (store) => {
   const data = {};
   data.protocol = req.protocol;
-  data.scripts = [
-    clientAssets.vendor.js,
-    clientAssets.client.js,
-  ];
+  // data.scripts = [
+  //   clientAssets.vendor.js,
+  //   clientAssets.client.js,
+  // ];
   data.state = store.getState();
   return renderToString(<Html {...data} />);
 };

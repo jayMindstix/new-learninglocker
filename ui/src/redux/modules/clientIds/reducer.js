@@ -25,7 +25,7 @@ const handler = handleActions({
     const { clientId } = action;
     return state.remove(clientId);
   }
-});
+}, initialState);
 
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(new Map(state), action); // ensure immutability

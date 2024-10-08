@@ -8,7 +8,7 @@ import Root from 'ui/components/Root';
 import createStore from 'ui/redux/create';
 import LLApiClient from 'ui/utils/LLApiClient';
 import router from 'lib/routes';
-import browserPlugin from 'router5/plugins/browser';
+import browserPlugin from 'router5-plugin-browser';
 
 const llClient = new LLApiClient();
 

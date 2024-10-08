@@ -1,6 +1,6 @@
 import User from 'lib/models/user';
 import NotFoundError from 'lib/errors/NotFoundError';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 
 const removeOrganisationFromUser = catchErrors(async (req, res) => {
   const user = await User.findOne({ _id: req.params.userId });

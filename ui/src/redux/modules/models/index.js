@@ -41,6 +41,7 @@ export const ADD_MODEL_FAILURE = addModelDuck.constants.FAILURE;
 /*
  * Reducers
  */
+const initialState = new Map();
 const handler = handleActions({
   ...addModelDuck.reducers,
   ...deleteModelDuck.reducers,
@@ -105,9 +106,8 @@ const handler = handleActions({
     const { id } = action;
     return state.setIn(['personaIdentifier', id, 'createPersonaState'], null);
   },
-});
+}, initialState);
 
-const initialState = new Map();
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);
@@ -122,7 +122,7 @@ export default function reducer(state = initialState, action = {}) {
  * @return {[type]}        [description]
  */
 export const mergeEntities = mergeEntitiesDuck.actions.mergeEntitiesAction;
-export entityReviver from 'ui/redux/modules/models/entityReviver';
+export { default as entityReviver } from 'ui/redux/modules/models/entityReviver';
 export const addModel = addModelDuck.actions.start;
 export const deleteModel = deleteModelDuck.actions.start;
 export const deleteModelSuccess = deleteModelDuck.actions.success;

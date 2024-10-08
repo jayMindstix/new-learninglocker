@@ -3,7 +3,7 @@ import { SITE_ADMIN, ALL } from 'lib/constants/scopes';
 import { MANAGE_ALL_USERS } from 'lib/constants/orgScopes';
 import NotFoundError from 'lib/errors/NotFoundError';
 import ClientError from 'lib/errors/ClientError';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 
 const createOrganisationSetting = catchErrors(async (req, res) => {
   const user = await User.findOne({ _id: req.params.userId });

@@ -1,5 +1,5 @@
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getJSONFromQuery from 'api/utils/getJSONFromQuery';
 import getFromQuery from 'api/utils/getFromQuery';
 import getOrgFromAuthInfo from 'lib/services/auth/authInfoSelectors/getOrgFromAuthInfo';

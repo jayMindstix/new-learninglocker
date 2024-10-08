@@ -111,6 +111,6 @@ export const selectors = {
 
 export const reducer = handleActions({
   ...fetchModelsCount.reducers
-});
+}, {});
 export const actions = fetchModelsCount.actions;
 export const sagas = fetchModelsCount.sagas;

@@ -41,7 +41,7 @@ const handler = handleActions({
   ...orgLogoutDuck.reducers,
   ...resetPasswordDuck.reducers,
   ...requestResetPasswordDuck.reducers
-});
+}, initialState);
 
 export default function reducer(state = initialState, action = {}) {
   if (!Iterable.isIterable(state)) return reducer(fromJS(state), action); // ensure immutability

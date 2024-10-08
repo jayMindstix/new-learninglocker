@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { List, Map } from 'immutable';
 import classNames from 'classnames';
@@ -119,7 +119,7 @@ const withAuthTypes = withProps(() => ({
   authTypes: AUTH_TYPES
 }));
 
-class StatementForwardingForm extends React.Component {
+class StatementForwardingForm extends Component {
 
   componentDidMount = () => {
     this.updateQueryIfUpdated();

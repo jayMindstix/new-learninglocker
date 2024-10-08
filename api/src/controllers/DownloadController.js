@@ -1,7 +1,7 @@
 import * as fileService from 'lib/services/files';
 import { downloadToStream } from 'lib/services/files/storage';
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 
 const downloadLogo = catchErrors(async (req, res) => {
   const authInfo = getAuthFromRequest(req);

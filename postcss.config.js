@@ -1,19 +1,33 @@
-var postcssUrl = require('postcss-url');
-var postcssCustomProperties = require('postcss-custom-properties');
-var postcssCustomMedia = require('postcss-custom-media');
-var postcssMediaMinmax = require('postcss-media-minmax');
-var postcssCustomSelectors = require('postcss-custom-selectors');
-var postcssCalc = require('postcss-calc');
-var postcssNesting = require('postcss-nesting');
-var postcssNested = require('postcss-nested');
-var postcssColorFunction = require('postcss-color-function');
-var pixrem = require('pixrem');
-var postcssSelectorMatches = require('postcss-selector-matches');
-var postcssSelectorNot = require('postcss-selector-not');
-var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
-var autoprefixer = require('autoprefixer');
+// var postcssUrl = require('postcss-url');
+// var postcssCustomProperties = require('postcss-custom-properties');
+// var postcssCustomMedia = require('postcss-custom-media');
+// var postcssMediaMinmax = require('postcss-media-minmax');
+// var postcssCustomSelectors = require('postcss-custom-selectors');
+// var postcssCalc = require('postcss-calc');
+// var postcssNesting = require('postcss-nesting');
+// var postcssNested = require('postcss-nested');
+// var postcssColorFunction = require('postcss-color-function');
+// var pixrem = require('pixrem');
+// var postcssSelectorMatches = require('postcss-selector-matches');
+// var postcssSelectorNot = require('postcss-selector-not');
+// var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+// var autoprefixer = require('autoprefixer');
 
-module.exports = {
+import postcssUrl from 'postcss-url';
+import postcssCustomProperties from 'postcss-custom-properties';
+import postcssCustomMedia from 'postcss-custom-media';
+import postcssMediaMinmax from 'postcss-media-minmax';
+import postcssCustomSelectors from 'postcss-custom-selectors';
+import postcssCalc from 'postcss-calc';
+import postcssNesting from 'postcss-nesting';
+import postcssNested from 'postcss-nested';
+import postcssColorFunction from 'postcss-color-function';
+import pixrem from 'pixrem';
+import postcssSelectorMatches from 'postcss-selector-matches';
+import postcssSelectorNot from 'postcss-selector-not';
+import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
+
+export default {
   plugins: [
     // Allow you to fix url() according to postcss to and/or from options
     // https://github.com/postcss/postcss-url
@@ -57,13 +71,13 @@ module.exports = {
     postcssFlexbugsFixes,
     // Add vendor prefixes to CSS rules using values from caniuse.com
     // https://github.com/postcss/autoprefixer
-    autoprefixer({
-      browsers: [
-        '>1%',
-        'last 4 versions',
-        'Firefox ESR',
-        'not ie < 9', // React doesn't support IE8 anyway
-      ],
-    }),
+    // autoprefixer({
+    //   browserslist: [
+    //     '>1%',
+    //     'last 4 versions',
+    //     'Firefox ESR',
+    //     'not ie < 9', // React doesn't support IE8 anyway
+    //   ],
+    // }),
   ],
 };

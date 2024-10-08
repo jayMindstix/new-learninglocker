@@ -54,6 +54,7 @@ function* requestAppAccessSaga() {
   }
 }
 
+const initialState = {};
 const handler = handleActions({
   [REQUEST_APP_ACCESS]: state =>
     state.setIn(['requestState'], IN_PROGRESS),
@@ -65,9 +66,8 @@ const handler = handleActions({
     const out = state.setIn(['requestState'], FAILED);
     return out;
   }
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(new Map(state), action); // ensure immutability
   return handler(state, action);

@@ -367,6 +367,6 @@ export const selectors = {
 
 export const reducer = handleActions({
   ...fetchModels.reducers
-});
+}, {});
 export const actions = { fetchMore, fetchAllOutstandingModels, ...fetchModels.actions };
 export const sagas = fetchModels.sagas;

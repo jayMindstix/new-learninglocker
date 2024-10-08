@@ -1,14 +1,19 @@
 import 'dotenv/config';
-import path from 'path';
-import { all } from 'bluebird';
-import run from '../lib/tools/run';
-import bundle from '../lib/tools/bundle';
-import getWebpackConfig from '../lib/tools/getWebpackConfig';
+import path, { dirname } from 'path';
+import { fileURLToPath } from "url";
+import pkg from 'bluebird';
+import run from '../lib/tools/run.js';
+import bundle from '../lib/tools/bundle.js';
+import getWebpackConfig from '../lib/tools/getWebpackConfig.js';
 
+const { all } = pkg;
 const isDebug = !process.argv.includes('--release');
 const isVerbose = !!process.argv.includes('--verbose');
 const watch = !!process.argv.includes('--watch');
 const stats = !!process.argv.includes('--stats');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const sourceDir = path.resolve(__dirname, 'src');
 const outputDir = path.resolve(__dirname, 'dist', 'server');

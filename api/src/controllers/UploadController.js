@@ -1,6 +1,6 @@
 import * as fileService from 'lib/services/files';
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getFileFromRequest from 'api/controllers/utils/getFileFromRequest';
 
 const uploadLogo = catchErrors(async (req, res) => {

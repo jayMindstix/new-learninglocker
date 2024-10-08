@@ -32,7 +32,7 @@ const handler = handleActions({
   [MERGE_PERSONA_DONE]: (state, { id }) => (
     state.setIn([id, 'requestState'], null)
   )
-});
+}, initialState);
 
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(new Map(state), action); // ensure immutability

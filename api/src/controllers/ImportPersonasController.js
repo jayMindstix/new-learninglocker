@@ -11,7 +11,7 @@ import {
 } from 'lodash';
 import { map } from 'bluebird';
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getFileAndFieldsFromRequest from 'api/controllers/utils/getFileAndFieldsFromRequest';
 import getPersonaService from 'lib/connections/personaService';
 import uploadPersonasService from 'lib/services/importPersonas/uploadPersonas';

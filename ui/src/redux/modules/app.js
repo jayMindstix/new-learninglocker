@@ -10,12 +10,11 @@ const SET_APP_DATA = 'learninglocker/app/SET_APP_DATA';
 /*
  * Reducers
  */
+const initialState = {};
 const handler = handleActions({
   [SET_APP_DATA]: (state, { key, value }) =>
     state.set(key, value),
-});
-
-const initialState = {};
+}, initialState);
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

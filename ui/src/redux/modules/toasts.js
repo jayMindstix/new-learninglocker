@@ -1,7 +1,7 @@
 import { take, put, call, fork } from 'redux-saga/effects';
 import { Map, fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export const TOAST = 'learninglocker/toast/TOAST';
 export const TOAST_START = 'learninglocker/toast/TOAST_START';
@@ -10,20 +10,20 @@ export const TOAST_FINISH = 'learninglocker/toast/TOAST_FINISH';
 /*
  * Reducers
  */
+const initialState = {};
 const handler = handleActions({
   [TOAST_START]: (state, action) => {
     const { keyPath, message } = action;
     return state.updateIn(keyPath, new Map(), toastState =>
       toastState.set('message', message)
-     );
+    );
   },
   [TOAST_FINISH]: (state, action) => {
     const { keyPath } = action;
     return state.deleteIn(keyPath);
   },
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

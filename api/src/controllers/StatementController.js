@@ -2,7 +2,7 @@ import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
 import getFromQuery from 'api/utils/getFromQuery';
 import getJSONFromQuery from 'api/utils/getJSONFromQuery';
 import * as statementsService from 'lib/services/statements';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import defaultTo from 'lodash/defaultTo';
 
 const MAX_TIME_MS = defaultTo(Number(process.env.MAX_TIME_MS), 0);

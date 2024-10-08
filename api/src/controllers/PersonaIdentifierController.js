@@ -1,5 +1,5 @@
 import getJSONFromQuery from 'api/utils/getJSONFromQuery';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getPersonaFilter from 'api/controllers/utils/getPersonaFilter';
 import getFromQuery from 'api/utils/getFromQuery';
 import ClientError from 'lib/errors/ClientError';

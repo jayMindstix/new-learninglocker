@@ -8,15 +8,15 @@ export const SETIN_AGGREGATION_RESULT = 'learninglocker/aggregation/SETIN_AGGREG
 /*
  * Reducers
  */
+const initialState = new Map();
 const handler = handleActions({
   ...fetchAggregationDuck.reducers,
   [SETIN_AGGREGATION_RESULT]: (state, action) => {
     const { keyPath, value } = action;
     return state.setIn(keyPath, value);
   }
-});
+}, initialState);
 
-const initialState = new Map();
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

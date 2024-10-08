@@ -1,10 +1,18 @@
-require('dotenv/config');
-var path = require('path');
-var getWebpackConfig = require('../lib/tools/getWebpackConfig');
+// require('dotenv/config');
+// var path = require('path');
+// var getWebpackConfig = require('../lib/tools/getWebpackConfig');
+
+import 'dotenv/config';
+import path, { dirname } from 'path';
+import { fileURLToPath } from "url";
+import getWebpackConfig from '../lib/tools/getWebpackConfig';
 
 var isDebug = !process.argv.includes('--release');
 var isVerbose = !!process.argv.includes('--verbose');
 var stats = !!process.argv.includes('--stats');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 var sourceDir = path.resolve(__dirname, 'src');
 var outputDir = path.resolve(__dirname, 'dist', 'server');

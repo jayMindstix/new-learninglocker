@@ -142,8 +142,7 @@ export const importPersonas = importPersonasDuck.actions.start;
 /*
  * Reducers
  */
-
-
+const initialState = {};
 const handler = handleActions({
   [UPLOAD_PERSONAS]: (state, { id }) =>
     state.setIn([id, 'requestState'], IN_PROGRESS),
@@ -163,9 +162,8 @@ const handler = handleActions({
     state.setIn([id, 'requestState'], FAILED),
   [importPersonasDuck.constants.complete]: (state, { id }) =>
     state.deleteIn([id, 'requestState'])
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(new Map(state), action); // ensure immutability
   return handler(state, action);

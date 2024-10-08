@@ -7,7 +7,7 @@ import { promisify } from 'bluebird';
 import RequestAppAccessError from 'lib/errors/RequestAppAccessError';
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
 import logger from 'lib/logger';
-import catchErrors from './utils/catchErrors';
+import catchErrors from './utils/catchErrors.js';
 
 export const requestAppAccess = catchErrors(async (request, response) => {
   const authInfo = getAuthFromRequest(request);

@@ -8,16 +8,16 @@ const SET_STATEMENT_TIMEZONE = 'learninglocker/statements/SET_STATEMENT_TIMEZONE
 /*
  * Reducers
  */
+const initialState = fromJS({
+  query: {}
+});
 const handler = handleActions({
   [SET_STATEMENT_QUERY]: (state, action) =>
     state.set('query', action.query),
   [SET_STATEMENT_TIMEZONE]: (state, action) =>
     state.set('timezone', action.timezone)
-});
+}, initialState);
 
-const initialState = fromJS({
-  query: {}
-});
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

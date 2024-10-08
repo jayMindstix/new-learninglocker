@@ -1,5 +1,5 @@
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getScopeFilter from 'lib/services/auth/filters/getScopeFilter';
 import { generateQueryBuilderCaches } from 'lib/services/querybuildercache';
 import Statement, { mapDot } from 'lib/models/statement';

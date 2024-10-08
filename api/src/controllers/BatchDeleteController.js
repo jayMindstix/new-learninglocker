@@ -1,8 +1,8 @@
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import { get, isEmpty } from 'lodash';
 import mongoose from 'mongoose';
 import getAuthFromRequest from 'lib/helpers/getAuthFromRequest';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 import getScopeFilter from 'lib/services/auth/filters/getScopeFilter';
 import BatchDelete from 'lib/models/batchDelete';
 import Statement from 'lib/models/statement';

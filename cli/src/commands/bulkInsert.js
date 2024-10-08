@@ -1,6 +1,6 @@
 import logger from 'lib/logger';
 import TinCan from 'tincanjs';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import _ from 'lodash';
 import moment from 'moment';
 import hash from 'object-hash';

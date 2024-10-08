@@ -11,6 +11,7 @@ export const QUERY_CHANGE_SECTIONS = 'learninglocker/query/QUERY_CHANGE_SECTIONS
 /*
  * Reducers
  */
+const initialState = {};
 const handler = handleActions({
   [QUERY_SET_SELECTED_ID]: (state, action) => {
     const { keyPath, selectedId } = action;
@@ -20,9 +21,8 @@ const handler = handleActions({
     const { keyPath, sections } = action;
     return state.setIn(keyPath.push('sections'), sections);
   },
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

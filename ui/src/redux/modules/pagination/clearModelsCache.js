@@ -51,6 +51,6 @@ const clearModelsCache = ({ schema, filter = new Map() }) => ({
 export const selectors = { };
 export const reducer = handleActions({
   [CLEAR_MODELS_CACHE]: reduceClearCache
-});
+}, {});
 export const actions = { clearModelsCache };
 export const sagas = [];

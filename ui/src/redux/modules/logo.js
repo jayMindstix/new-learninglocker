@@ -42,7 +42,7 @@ const handler = handleActions({
     const { schema, id } = action;
     return state.setIn([schema, id, 'uploadState'], null);
   },
-});
+}, initialState);
 
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(new Map(state), action); // ensure immutability

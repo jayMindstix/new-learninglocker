@@ -3,35 +3,71 @@
     // 'latest',
     // Experimental ECMAScript proposals
     // https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0
-    "react",
+    // "react",
     // Latest stable ECMAScript features
     // https://github.com/babel/babel/tree/master/packages/babel-preset-latest
     // webpack 2.0 can handle es6 modules natively
     // and provides dead code removal
-    ["env", {
-      "es2015": {
-        "modules": false
-      }
-    }],
+    // ["env", {
+    //   "es2015": {
+    //     "modules": false
+    //   }
+    // }],
     // JSX, Flow
     // https://github.com/babel/babel/tree/master/packages/babel-preset-react
-    "stage-0"
+    // "stage-0",
+    // ["@babel/preset-env", {
+    //   "debug": false,
+    //   "modules": false,
+    //   "useBuiltIns": false
+    // }], 
+    // "@babel/preset-env",
+    // "@babel/preset-react",
+    [
+      "@babel/preset-env", {
+      /*  
+      "targets": {
+        "esmodules": true,
+        "node": "current"
+      },*/
+      "modules": false  // Important to preserve ES modules
+    }],
+    ["@babel/preset-react", {
+      "runtime": "automatic" 
+    }]
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-es2015-destructuring",
-    "transform-object-rest-spread",
-    "transform-es2015-parameters",
+    ["@babel/plugin-transform-runtime", {
+      "useESModules": true  // This ensures ES modules are used in the runtime
+    }],
+    ["@babel/plugin-transform-modules-commonjs", {
+      "strictMode": false  // Disable strict mode if needed
+    }],
+    //"@babel/plugin-transform-runtime",
+    //"@babel/plugin-transform-modules-commonjs",
+    // ["@babel/plugin-transform-modules-commonjs", {
+    //   "allowTopLevelThis": true
+    // }],
+    // [
+    //   "@babel/plugin-transform-runtime",
+    //   {
+    //     "useESModules": true
+    //   }
+    // ],
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-destructuring",
+    "@babel/plugin-transform-parameters",
     "transform-decorators-legacy",
-    "transform-class-properties",
-    "syntax-dynamic-import"
+    "@babel/plugin-transform-class-properties",
+    "syntax-dynamic-import",
+    "@babel/plugin-transform-reserved-words"
   ],
   "env": {
     "development": {
       "plugins": [
         // Adds component stack to warning messages
         // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-source
-        "transform-react-jsx-source",
+        // "transform-react-jsx-source",
         // Adds __self attribute to JSX which React will use for some warnings
         // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-self
         "transform-react-jsx-self"

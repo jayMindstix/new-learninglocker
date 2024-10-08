@@ -6,7 +6,7 @@
     "mocha": true,
     "jest/globals": true
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "rules": {
     "import/prefer-default-export": 0,
     "max-len": 0,
@@ -107,7 +107,7 @@
     "no-only-tests"
   ],
   "settings": {
-    "import/parser": "babel-eslint",
+    "import/parser": "@babel/eslint-parser",
     "import/resolve": {
       "moduleDirectory": [
         "node_modules",

@@ -31,4 +31,4 @@ export {
   organisationSettingsSelector,
   activeOrganisationSettingsSelector,
   isSiteAdminSelector
-} from 'ui/redux/modules/auth';
+} from './modules/auth';

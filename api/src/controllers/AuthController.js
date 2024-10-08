@@ -16,7 +16,7 @@ import {
 import Unauthorized from 'lib/errors/Unauthorised';
 import { createOrgJWT, createOrgRefreshJWT, createUserJWT, createUserRefreshJWT } from 'api/auth/jwt';
 import { AUTH_FAILURE } from 'api/auth/utils';
-import catchErrors from 'api/controllers/utils/catchErrors';
+import catchErrors from 'api/controllers/utils/catchErrors.js';
 
 const buildRefreshCookieOption = (protocol) => {
   const validPeriodMsec = ms(JWT_REFRESH_TOKEN_EXPIRATION);

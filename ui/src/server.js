@@ -1,18 +1,19 @@
-import logger from 'lib/logger';
+import logger from '../../lib/logger.js';
 import Express from 'express';
 import helmet from 'helmet';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import httpProxy from 'http-proxy';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from "url";
 import http from 'http';
 import fs from 'fs';
 import morgan from 'morgan';
 import mkdirp from 'mkdirp';
-import FileStreamRotator from 'file-stream-rotator';
-import config from 'ui/config';
-import renderApp from 'ui/controllers/renderApp';
-import renderDashboard from 'ui/controllers/renderDashboard';
+import * as FileStreamRotator from 'file-stream-rotator'
+import config from './config.js';
+import renderApp from './controllers/renderApp.js';
+import renderDashboard from './controllers/renderDashboard.js';
 
 process.on('SIGINT', () => {
   process.exit(0);
@@ -29,6 +30,9 @@ const server = new http.Server(app);
 const proxy = httpProxy.createProxyServer({
   target: targetUrl
 });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // log directory
 const logDirectory = process.env.LOG_DIR || path.join(__dirname, '..', '..', 'logs');
@@ -87,11 +91,12 @@ app.use('*', renderApp);
 if (config.port) {
   server.listen(config.port, (err) => {
     if (err) {
+      console.log('Having error')
       logger.error(err);
     }
+    console.log(config)
     logger.info(
-      '\n --- \n',
-      `==> ✅  ${config.app.title} is running, talking to API server on ${config.apiPort}.`, '\n',
+      `==> ✅  ${config.app.title} is running on ${config.port}, talking to API server on ${config.apiPort}.`, '\n',
       `==> 💻  Open ${process.env.SITE_URL} in a browser to view the app.`, '\n',
       '--- \n'
     );

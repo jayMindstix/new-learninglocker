@@ -10,6 +10,7 @@ import { decodeLoginTokenAction } from 'ui/redux/modules/auth';
 import createStore from 'ui/redux/create';
 import LLApiClient from 'ui/helpers/LLApiClient';
 import getRoutes from 'ui/dashboards/routes';
+import DevTools from './containers/DevTools/DevTools';
 
 const llClient = new LLApiClient();
 
@@ -46,7 +47,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 if (__DEVTOOLS__ && !window.__REDUX_DEVTOOLS_EXTENSION__) {
-  const DevTools = require('./containers/DevTools/DevTools');
+  // const DevTools = require('./containers/DevTools/DevTools');
 
   ReactDOM.render(
     <Provider store={store} key="provider">

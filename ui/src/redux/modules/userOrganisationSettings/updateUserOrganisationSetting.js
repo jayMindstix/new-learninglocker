@@ -64,6 +64,6 @@ export const duck = createAsyncDuck({
 /**
  * Reducer
  */
-const handler = handleActions(duck.reducers);
 const initialState = new Map();
+const handler = handleActions(duck.reducers, initialState);
 export const reducers = (state = initialState, action = {}) => handler(state, action);

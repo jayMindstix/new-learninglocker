@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import userMiddleware from 'ui/redux/middleware/userMiddleware';
 import rootSaga, { sagaMiddleware } from 'ui/redux/modules/sagas';
 import reducer from 'ui/redux/reducer';
-
+import { persistState } from 'redux-devtools';
 
 export default function createStore(llClient, router, data) {
   const middleware = [
@@ -23,7 +23,7 @@ export default function createStore(llClient, router, data) {
 
   let finalCreateStore;
   if (__DEVELOPMENT__ && __CLIENT__ && __DEVTOOLS__) {
-    const { persistState } = require('redux-devtools');
+    // const { persistState } = require('redux-devtools');
 
     finalCreateStore = composeEnhancers(
       applyMiddleware(...middleware),

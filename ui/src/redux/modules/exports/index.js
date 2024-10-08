@@ -6,11 +6,11 @@ import * as downloadExportDuck from 'ui/redux/modules/exports/downloadExport';
 /*
  * Reducers
  */
+const initialState = new Map();
 const handler = handleActions({
   ...downloadExportDuck.reducers,
-});
+}, initialState);
 
-const initialState = new Map();
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

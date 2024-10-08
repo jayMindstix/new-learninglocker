@@ -37,7 +37,7 @@ const html = ({
             ` }}
             charSet="UTF-8" />
         )}
-        {scripts && scripts.map(script => <script key={script} src={script} />)}
+        {scripts && scripts.map(script => <script type="module" key={script} src={script} />)}
       </body>
     </html>
   );

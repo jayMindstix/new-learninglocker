@@ -3,12 +3,12 @@ import logger from 'lib/logger';
 import Html from 'ui/components/Html';
 import PrettyError from 'pretty-error';
 import { renderToString } from 'react-dom/server';
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import defaultTo from 'lodash/defaultTo';
 
 // this is the assets manifest for the client build
 // it describes the location of all the compiled assets (js, css)
-import clientAssets from '../public/assets.json';
+// import clientAssets from '../public/assets.json';
 
 const pretty = new PrettyError();
 
@@ -17,8 +17,8 @@ export default async (req, res, next) => {
     const data = {};
     data.protocol = req.protocol;
     data.scripts = [
-      clientAssets.vendor.js,
-      clientAssets.client.js,
+      // clientAssets.vendor.js,
+      // clientAssets.client.js,
     ];
 
     data.state = {
@@ -28,7 +28,7 @@ export default async (req, res, next) => {
       }
     };
 
-    const html = renderToString(<Html {...data} />);
+    const html = renderToString(<Html {...data}></Html>);
     global.navigator = { userAgent: req.headers['user-agent'] };
     res.set('X-XSS-Protection', '1; mode=block');
     res.set('X-Content-Type-Options', 'nosniff');

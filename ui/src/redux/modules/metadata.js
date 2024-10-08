@@ -8,6 +8,7 @@ const DELETE_IN_METADATA = 'learninglocker/metadata/DELETE_IN';
 /*
  * Reducers
  */
+const initialState = {};
 const handler = handleActions({
   [SET_IN_METADATA]: (state, action) => {
     const { schema, id, path, value } = action;
@@ -17,9 +18,8 @@ const handler = handleActions({
     const { schema, id, path } = action;
     return state.deleteIn([schema, id, ...path]);
   }
-});
+}, initialState);
 
-const initialState = {};
 export default function reducer(state = initialState, action = {}) {
   if (!Map.isMap(state)) return reducer(fromJS(state), action); // ensure immutability
   return handler(state, action);

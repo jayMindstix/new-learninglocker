@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai';
 import chaiFs from 'chai-fs';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from "url";
 import stream from 'stream';
 import ExportDBHelper from 'api/utils/tests/exportsDBHelper';
 import { streamToCsv, groupStreams } from 'api/utils/exports';
@@ -55,6 +56,8 @@ describe('Export helper tests', () => {
   });
 
   describe('streamToCsv', () => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
     const testPath = path.join(__dirname, 'testcsv.csv');
     //
     // afterEach(() => {
