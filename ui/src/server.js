@@ -23,7 +23,8 @@ const targetUrl = `http://${config.apiHost}:${config.apiPort}`;
 const app = new Express();
 
 app.use(helmet({
-  frameguard: config.enableFrameguard
+  frameguard: config.enableFrameguard,
+  contentSecurityPolicy: false
 }));
 
 const server = new http.Server(app);
