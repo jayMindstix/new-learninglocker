@@ -1,4 +1,4 @@
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import { get, map, isEmpty } from 'lodash';
 import BatchDelete, { inWindow } from 'lib/models/batchDelete';
 import NoAccessError from 'lib/errors/NoAccessError';

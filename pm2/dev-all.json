@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "API",
-      "script": "api/dist/server",
+      "script": "api/dist/server/index.js",
       "cwd": ".",
       "output": "./logs/stdout.log",
       "error": "./logs/stderr.log",
@@ -18,7 +18,7 @@
     },
     {
       "name": "UIServer",
-      "script": "ui/dist/server",
+      "script": "ui/dist/server/index.js",
       "cwd": ".",
       "output": "./logs/stdout.log",
       "error": "./logs/stderr.log",
@@ -31,7 +31,7 @@
     },
     {
       "name": "Worker",
-      "script": "worker/dist/server",
+      "script": "worker/dist/server/index.js",
       "cwd": ".",
       "node_args": "--max-old-space-size=256 --max-semi-space-size=2",
       "output": "./logs/stdout.log",
@@ -46,7 +46,7 @@
     },
     {
       "name": "Scheduler",
-      "script": "cli/dist/scheduler",
+      "script": "cli/dist/scheduler/index.js",
       "cwd": ".",
       "output": "./logs/stdout.log",
       "error": "./logs/stderr.log",

@@ -1,5 +1,5 @@
 import React from 'react';
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import { fromJS, List, Map } from 'immutable';
 import { connect } from 'react-redux';
 import { slice, toPath } from 'lodash';

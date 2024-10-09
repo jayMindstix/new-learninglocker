@@ -8,12 +8,15 @@ const host = process.env.UI_HOST || '127.0.0.1';
 // const enableFrameguard = boolean(defaultTo(process.env.ENABLE_FRAMEGUARD, true));
 const enableFrameguard = process.env.ENABLE_FRAMEGUARD === 'true';
 const port = parseInt(process.env.UI_PORT || process.env.PORT, 10);
-const devPort = 3131;
+// To check if the core.css is getting load on UI_PORT
+const devPort = null;
 const assetPort = isProduction ? port : devPort;
 
+// To check if the core.css is getting load on UI_PORT
 let assetPath = '';
 if (!isProduction) {
-  assetPath += `//${host}:${assetPort}`;
+  // assetPath += `http://${host}:${assetPort}`;
+  assetPath += `http://localhost:3000`;
 }
 assetPath += '/';
 

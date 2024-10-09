@@ -7,6 +7,7 @@ import getWebpackConfig from '../lib/tools/getWebpackConfig.js';
 import config from './src/config.js';
 
 const isDebug = !process.argv.includes('--release');
+// const isDebug = true;
 const isVerbose = !!process.argv.includes('--verbose');
 const stats = !!process.argv.includes('--stats');
 

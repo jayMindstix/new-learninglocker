@@ -58,6 +58,8 @@ app.use(morgan(':method :url :remote-addr :referrer :date :query :status', { str
 
 app.use(compression());
 app.use(cookieParser());
+// To load static assets (like css)
+app.use(Express.static(__dirname));
 app.use(Express.static(path.join(__dirname, '..', 'public'), {
   setHeaders: (res, path2) => {
     if (path2.match(/fonts\/.+\.woff2/)) {

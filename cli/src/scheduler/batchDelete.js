@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import * as redis from 'lib/connections/redis';
 import logger from 'lib/logger';
 import { get } from 'lodash';

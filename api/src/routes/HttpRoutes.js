@@ -1,4 +1,4 @@
-import boolean from 'boolean';
+import { boolean } from 'boolean';
 import express from 'express';
 import restify from 'express-restify-mongoose';
 import git from 'git-rev';
