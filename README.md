@@ -37,6 +37,10 @@ Production mode - yarn build-all
 
 # Fixes
 
+Initial fixes
+> Upgraded outdated node packages
+> Added fixes for the build-time errors
+
 5th Oct 2024 (Saturday)
 > ReferenceError: require is not defined in ES module scope
   - Comment out nodeExternals() from webpack configuration
@@ -58,4 +62,4 @@ Production mode - yarn build-all
 
 > Load core.css on UI render
 
-> Added fixes based on the upgraded node packages
+> Added fixes based on the upgraded node packages for api, worker and cli folder

@@ -8,7 +8,7 @@ import defaultTo from 'lodash/defaultTo';
 
 // this is the assets manifest for the client build
 // it describes the location of all the compiled assets (js, css)
-// import clientAssets from '../public/assets.json';
+import clientAssets from '../public/assets.json';
 
 const pretty = new PrettyError();
 
@@ -17,8 +17,8 @@ export default async (req, res, next) => {
     const data = {};
     data.protocol = req.protocol;
     data.scripts = [
-      // clientAssets.vendor.js,
-      // clientAssets.client.js,
+      clientAssets.vendor.js,
+      clientAssets.client.js,
     ];
 
     data.state = {

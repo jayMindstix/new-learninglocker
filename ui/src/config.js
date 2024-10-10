@@ -9,15 +9,16 @@ const host = process.env.UI_HOST || '127.0.0.1';
 const enableFrameguard = process.env.ENABLE_FRAMEGUARD === 'true';
 const port = parseInt(process.env.UI_PORT || process.env.PORT, 10);
 // To check if the core.css is getting load on UI_PORT
+// const devPort = 3131;
 const devPort = null;
 const assetPort = isProduction ? port : devPort;
 
-// To check if the core.css is getting load on UI_PORT
+// To check if the core.css is getting load on UI_PORT (3000)
 let assetPath = '';
-if (!isProduction) {
-  // assetPath += `http://${host}:${assetPort}`;
-  assetPath += `http://localhost:3000`;
-}
+// if (!isProduction) {
+//   // assetPath += `http://${host}:${assetPort}`;
+//   assetPath += `http://localhost:3000`;
+// }
 assetPath += '/';
 
 export default {

@@ -22,7 +22,7 @@ const html = ({
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {head.script.toComponent()}
-        <link rel="shortcut icon" href={`${config.assetPath}static/favicon.ico`} />
+        <link rel="shortcut icon" href={`${config.assetPath}static/smallLogo.png`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href={`${config.assetPath}static/core.css`} />
         {style && <style id="css" dangerouslySetInnerHTML={{ __html: style }} />}
